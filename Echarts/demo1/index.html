@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echarts Demo</title>
+</head>
+<body>
+  <!-- * 图标容器 -->
+  <div id="demo" style="width: 600px; height: 400px;"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/dist/echarts.js"></script>
+  <script>
+    // * 初始化 echarts 实例
+    const myChart = echarts.init(document.getElementById('demo'))
+
+    // * 指定图标配置
+    const options = {
+      title: {
+        text: 'Echarts Demo'
+      },
+      // 提示框
+      tooltip: {},
+      // 图例组件（不同系列数据的标记）
+      legend: {
+        // data 属性需要与 series 中的 name 属性保持一致
+        data: ['使用人数'],
+        show: true,
+        icon: 'circle'
+      },
+      xAxis: {
+        data: ['vue', 'react', 'angular', 'jquery']
+      },
+      yAxis: {},
+      // 设置图表的类型
+      series: {
+        name: '使用人数',
+        type: 'bar',
+        data: [2000, 1300, 500, 2500]
+      }
+    }
+    // * 实例应用设置
+    myChart.setOption(options)
+  </script>
+</body>
+</html>
