@@ -1,2 +1,2 @@
 # frontend-interview
-前端新手的面试准备
+前端的面试准备
